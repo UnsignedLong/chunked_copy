@@ -10,6 +10,7 @@ sub usage()
 -s : sleep between chunks in usecs (default 10000 = 10ms)
 -c : chunk size (default 65536 = 64K)
 -u : unlink (delete) source file
+-v : verbose
 
 Example: perl $0 -s 5000 -c 2048 source.file dest.file
 EOF
@@ -31,6 +32,8 @@ open (INFILE, "<", $infile) or die "Not able to open the file. \n";
 open (OUTFILE, ">", $outfile) or die "Not able to open the file for writing. \n";
 binmode (INFILE);
 binmode (OUTFILE);
+
+print "$infile -> $outfile\n" if defined $options{v};
 
 while ( (read (INFILE, $buffer, $chunk)) != 0 ) {
     print OUTFILE $buffer;
