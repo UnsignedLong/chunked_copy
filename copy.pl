@@ -18,7 +18,7 @@ EOF
 }
 
 my %options=();
-getopts("uc:s:", \%options) or usage();
+getopts("uvc:s:", \%options) or usage();
 
 my $chunk = $options{c} || 65536; 
 my $sleep = $options{s} || 10000;
