@@ -7,3 +7,8 @@ Example Usage
 =============
 
 ls \*2013-02-1[1-5]\* | xargs -n1 -I {} perl copy.pl {} /archive/{}
+
+Copyright
+=========
+
+Copyright (c) 2013 Pascal Schmiel. See LICENSE for details.
